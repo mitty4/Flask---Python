@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gold!</title>
+</head>
+<body>
+	<h1>Your Gold: {{gold}}</h1>
+	<form action="/process_money" method= 'POST'>
+		Farm: (10-20) <input type="hidden" name="location" value="farm">
+		<input type="submit" value="Go">
+	</form>
+	<form action="/process_money" method= 'POST'>
+		cave: (5-10) <input type="hidden" name="location" value="cave">
+		<input type="submit" value="Go">
+	</form>
+	<form action="/process_money" method= 'POST'>
+		house: (2-5) <input type="hidden" name="location" value="house">
+		<input type="submit" value="Go">
+	</form>
+	<form action="/process_money" method= 'POST'>
+		casino: (-50-50)<input type="hidden" name="location" value="casino">
+		<input type="submit" value="Go">
+	</form>
+	<form action="/reset" >
+		<input type="submit" name="reset" value="Spend ALL">
+	</form>
+		Activities: <br/>
+	{%for act in activity%}
+		<span style="color: {{act['color']}}">
+	 		{{act['act']}} <br/>
+	 	</span>
+	{%endfor%}
+
+	{%for spend in reset%}
+		{{spend}}
+	{%endfor%}
+
+</body>
+</html>

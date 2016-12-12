@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success!</title>
+</head>
+<body>
+	<h1>Email Addresses Entered</h1>
+	{%for row in rows%}
+		{{row['email_address']}} {{row['created_at']}} <br/>
+	{%endfor%}
+
+
+
+</body>
+</html>

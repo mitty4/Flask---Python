@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+</head>
+<body style="margin: 100px">
+	<form action="/check" method="POST">
+		Enter an Email: <input type="text" name="email">
+		<input type="submit" name="register">
+	</form>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<form action="/success">
+		<input type="submit" name="view" value="view">
+	</form>
+</body>
+</html>
